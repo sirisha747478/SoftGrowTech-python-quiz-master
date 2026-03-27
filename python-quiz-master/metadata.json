@@ -1,0 +1,5 @@
+{
+  "name": "Python Quiz Master",
+  "description": "A multiple-choice quiz game inspired by Python programming, featuring score tracking and performance feedback.",
+  "requestFramePermissions": []
+}

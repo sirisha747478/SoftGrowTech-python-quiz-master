@@ -1,0 +1,40 @@
+{
+  "entities": {
+    "LeaderboardEntry": {
+      "title": "Leaderboard Entry",
+      "description": "A score entry on the leaderboard",
+      "type": "object",
+      "properties": {
+        "uid": {
+          "type": "string",
+          "description": "The user ID of the player"
+        },
+        "displayName": {
+          "type": "string",
+          "description": "The display name of the player"
+        },
+        "score": {
+          "type": "number",
+          "description": "The score achieved"
+        },
+        "difficulty": {
+          "type": "string",
+          "enum": ["EASY", "MEDIUM", "HARD"],
+          "description": "The difficulty level of the quiz"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "The time the score was recorded"
+        }
+      },
+      "required": ["uid", "displayName", "score", "difficulty", "createdAt"]
+    }
+  },
+  "firestore": {
+    "/leaderboard/{entryId}": {
+      "schema": "LeaderboardEntry",
+      "description": "Global leaderboard for all players"
+    }
+  }
+}
